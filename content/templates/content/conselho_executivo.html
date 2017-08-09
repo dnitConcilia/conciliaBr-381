@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+    Conselho Executivo | {{ block.super }}
+{% endblock  %}
+
+{% block content %}
+
+<section>
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="h1-header-title space-header">Conselho Executivo</h1>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="row">
+       <div class="col-sm-6 justfy-text">
+            <p>
+                Para minimizar os conflitos e facilitar o entendimento entre os diversos atores que compõem o <b>Concilia BR-381 e Anel</b> foi criado um Conselho Executivo, de caráter deliberativo, cuja principal função é buscar o consenso entre seus membros.
+            </p>
+            <p>
+               O Comitê acompanha das diversas ações do programa e é responsável pelo gerenciamento do <a class="link-text-patner" href="{% url 'plano_providencias' %}" target="_blank">Plano de Providências</a>.Do plano, elaborado pelo DNIT, constam as ações e soluções para viabilizar o reassentamento das famílias Concilia.
+            </p>
+             <p>
+                Foram estabelecidos <a class="link-text-patner" href="{% url 'criterios_regras' %}" target="_blank">critérios e regras</a> que orientam e facilitam a execução do Programa em cada uma de suas etapas. Essas diretrizes foram elaboradas pelos parceiros, revisadas pelos membros do Conselho Executivo e homologadas pela Justiça Federal.
+            </p>
+            <p class="justfy-text">
+                 O Comitê é composto por um representante de cada instituição parceira do Concilia BR-381 e Anel, que se reunem periodicamente e em situações extraordinárias quando necessário.
+            </p>
+       </div>
+       <div class="col-sm-6">
+                <span style="font-size: 11px; font-weight: normal;float: right;">Alexandre Dutra</span>
+                <img src="{% static 'img/imagens-paginas-internas/conselho_executivo_3.1.jpg' %}" />
+                <div class="content-media__description-centered ">
+                    <p class="content-media__description">
+                        <i class="content-media__description__icon theme-color-primary">
+                            <!-- Icone foto legenda -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13.5px" height="11.25px" viewBox="0 0 13 12">
+                                <ellipse id="Oval" cx="6.5" cy="6.7826087" rx="2" ry="2.08695652"></ellipse>
+                                <path d="M4.625,0.260869565 L3.48125,1.56521739 L1.5,1.56521739 C0.8125,1.56521739 0.25,2.15217391 0.25,2.86956522 L0.25,10.6956522 C0.25,11.4130435 0.8125,12 1.5,12 L11.5,12 C12.1875,12 12.75,11.4130435 12.75,10.6956522 L12.75,2.86956522 C12.75,2.15217391 12.1875,1.56521739 11.5,1.56521739 L9.51875,1.56521739 L8.375,0.260869565 L4.625,0.260869565 L4.625,0.260869565 Z M6.5,10.0434783 C4.775,10.0434783 3.375,8.5826087 3.375,6.7826087 C3.375,4.9826087 4.775,3.52173913 6.5,3.52173913 C8.225,3.52173913 9.625,4.9826087 9.625,6.7826087 C9.625,8.5826087 8.225,10.0434783 6.5,10.0434783 L6.5,10.0434783 Z" id="Shape">
+                                </path>
+                            </svg>
+                        </i>
+                        <span class="content-media__description__caption image-legend-description"> Primeira reunião do Conselho Executivo </span>
+                    </p>
+                </div>
+             <p class="justfy-text">
+                 As deliberações do Conselho Executivo vão desde a conciliação e o cumprimento do Acordo Judicial homologado em juízo até a análise de casos excepcionais e decisões estratégicas.
+             </p>
+
+        </div>
+    </div>
+</section>
+<section>
+    <div class="row">
+        <div class="col-sm-12" style="margin-bottom: 50px;">
+            <br />
+            <a target="_blank" href="{% static 'files/2017-06-06-Regimento_Interno_Conselho_Executivo.pdf' %}" >
+                <b>
+                     <h5><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true" style="color: #444;"></i>
+                        Clique aqui para visualizar o regimento do Conselho Executivo
+					</h5>
+                </b>
+            </a>
+        </div>
+    </div>
+</section>
+{% if atas_de_reunioes|length > 0 %}
+
+<section>
+     <div class="row">
+        <div class="col-sm-12">
+            <h1 class="h1-header-title">Atas de Reuniões</h1>
+        </div>
+    </div>
+    <div class="row">
+         <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Título</th>
+                    <th>Descrição</th>
+                    <th>Data</th>
+					<th>Apresentação</th>
+                    <th>Ata</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for ata in atas_de_reunioes %}
+                      <tr>
+                        <td>{{ata.title}}</td>
+                        <td>{{ata.description}}</td>
+                        <td>{{ata.date_ata_reuniao}}</td>
+						<td class="center-text">
+                            <a target="_blank" href="{{ata.ppt.url}}" >
+                               <i class="fa fa-file-powerpoint-o fa-2x" aria-hidden="true" style="color: #444;"></i>
+                            </a>
+                        </td>
+                        <td class="center-text">
+                            <a target="_blank" href="{{ata.arquivo.url}}" >
+                               <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true" style="color: #444;"></i>
+                            </a>
+                        </td>
+                      </tr>
+                  {% endfor %}
+
+                </tbody>
+              </table>
+         </div>
+    </div>
+</section>
+
+{% else %}
+<section>
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Atas de Reuniões</h1>
+        </div>
+    </div>
+    <div class="row">
+         <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Título</th>
+                    <th>Descrição</th>
+                    <th>Data</th>
+					<th>Apresentação</th>
+                    <th>Documento</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="center-text">
+                    <td colspan="5"><b>Nenhuma ata de reunião encontrada.</b></td>
+                  </tr>
+                </tbody>
+              </table>
+         </div>
+    </div>
+</section>
+
+{% endif %}
+
+{% endblock  %}

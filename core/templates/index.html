@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load thumbnail %}
+
+{% block content %}
+
+
+<section class="section-index-map">
+	<div class="row">
+		<div class="col-sm-12">
+			<h1 class="h1-header-title space-header">O Concilia</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-7">
+			<img src="{% static 'img/background-images/mapa.jpg' %}" title="Anel Rodoviário e BR-381" alt="Anel Rodoviário e BR-381"/>
+		</div>
+		<div class="col-sm-5">
+			<p class="text-home-index justfy-text">
+				O <b>Concilia BR-381 e Anel - Programa Judicial de Conciliação para Remoção e Reassentamento Humanizados de Famílias do Anel Rodoviário e BR-381 - </b> foi criado em função da necessidade de revitalização dessas rodovias. É uma iniciativa da Justiça Federal e do Departamento Nacional de Infraestrutura de Transportes (DNIT), em parceria com Ministério Público Federal (MPF), Defensoria Pública da União (DPU), Companhia Urbanizadora e de Habitação de Belo Horizonte (URBEL) e Associação das Comunidades de Moradores de Áreas de Risco de Belo Horizonte (CMAR).
+			</p>
+		</div>
+	</div>
+</section>
+
+<!-- TIMELINE -->
+<section>
+	{% include 'timeline.html' %}
+</section>
+
+<!-- PARALLAX -->
+<section class="parallax height-500" id="parallax">
+	<div class="row">
+		<div class="col-sm-3">
+			<div class="icons-parallax">
+				<span class="label-icones-casas">
+					<span class="count label-icones-casas-numero" data-count="123">
+						0
+					</span><br />
+					FAMÍLIAS NO<br />ALUGUEL SOCIAL
+				</span>
+				<img src="{% static 'img/icones/azul2.png' %}" title="Concilia BR-381 e Anel" />
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="icons-parallax">
+				<span class="label-icones-casas">
+					<span class="count label-icones-casas-numero" data-count="1385">
+						0
+					</span><br />
+					MORADIAS<br />SELADAS
+				</span>
+				<img src="{% static 'img/icones/amarelo2.png' %}" title="Concilia BR-381 e Anel" />
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="icons-parallax">
+				<span class="label-icones-casas">
+					<span class="count label-icones-casas-numero" data-count="264">
+						0
+					</span><br />
+					Nº DE FAMIĹIAS<br />NA 1ª ETAPA
+				</span>
+				<img src="{% static 'img/icones/verde2.png' %}" title="Concilia BR-381 e Anel" />
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="icons-parallax">
+				<span class="label-icones-casas">
+					<span class="count label-icones-casas-numero" data-count="108">
+						0
+					</span><br />
+					INDENIZAÇÕES <br /> CONCLUÍDAS
+				</span>
+				<img src="{% static 'img/icones/magenta2.png' %}" title="Concilia BR-381 e Anel" />
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- NOTICIAS -->
+
+<section class="section-noticia height-500">
+	<div class="row">
+		<div class="col-sm-12">
+			<h1 class="h1-header-title">Notícias</h1>
+		</div>
+	</div>
+
+<div class="row block-noticia-itens">
+	{% if noticias_home_page.count > 0 %}
+		{% for noticia in noticias_home_page %}
+		<div class="col-sm-4">
+			<a href="{% url 'content:noticia' noticia.slug %}" title="{{noticia.title}}" alt="{{noticia.title}}" style="text-decoration: none;">
+				{% if noticia.image and noticia.has_image %}
+					<img src="{{noticia.image|thumbnail_url:'home_news'}}" alt="{{noticia}}" style="width:300px;height: 200px;">
+				{% endif %}
+				{% if noticia.image and not noticia.exists_image_in_path %}
+					<img src="{% static 'img/img_nao_disponivel.png' %}"/>
+				{% endif %}
+				<p class="hui-highlight-title"> {{noticia.title |truncatechars_html:58}} </p>
+			</a>
+		</div>
+		{% endfor %}
+	{% endif %}
+	{% if noticias_home_page.count == 0 %}
+	<div class="center-text col-sm-12">
+		<h4>Não foi encontrado nenhuma notícia cadastrada.</h4>
+	</div>
+	{% endif %}
+</div>
+{% if noticias_home_page.count > 0 %}
+	<div class="row">
+		<div class="col-sm-12">
+			 <a href="{% url 'content:noticias' %}" class="view-all-noticia" title="Visualizar todas as notícias">
+				<span style="color: #0091ea;">VER TODAS</span>
+			</a>
+		</div>
+	</div>
+{% endif %}
+</section>
+
+<!-- LINKS ÚTEIS -->
+<script>
+var a = 0;
+$(window).scroll(function() {
+
+  var oTop = $('#parallax').offset().top - window.innerHeight;
+  if (a == 0 && $(window).scrollTop() > oTop) {
+    $('.count').each(function() {
+      var $this = $(this),
+        countTo = $this.attr('data-count');
+      $({
+        countNum: $this.text()
+      }).animate({
+          countNum: countTo
+        },
+        {
+          duration: 2500,
+          easing: 'swing',
+          step: function() {
+            $this.text(Math.floor(this.countNum));
+          },
+          complete: function() {
+            $this.text(this.countNum);
+          }
+
+        });
+    });
+    a = 1;
+  }
+
+});
+</script>
+{% endblock %}

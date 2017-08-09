@@ -1,0 +1,10 @@
+concilia_BR381/staticfiles
+media/
+db.rondon
+*.pyc
+core/__pycache__/*
+content/__pycache__/*
+db.*
+media/*
+local_settings.py
+venv*

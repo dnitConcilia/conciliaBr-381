@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} O que é | {{ block.super }} {% endblock %}
+
+{% block content %}
+
+<section>
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="h1-header-title space-header">O QUE É</h1>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="row">
+         <h3 class="header-title">As rodovias</h3><br>
+        <div class="col-md-6">
+            <p class="justfy-text">O Anel Rodoviário de Belo Horizonte e a BR-381 Norte são importantes rodovias para Minas Gerais, onde transitam cerca de 154 mil veículos por dia, segundo dados de 2013 da Polícia Rodoviária Federal. O tráfego existente já ultrapassou o volume planejado para a rodovia quando de sua contrução, em 1950.</p>
+            <p class="justfy-text">De acordo com a PRF, os 27 km do Anel Rodoviário de Belo Horizonte e os 303 km da BR-381 Norte (trecho de BH a Governador Valadares) são parte da malha rodoviária mineira com o maior índice de acidentes no estado. Para aumentar a capacidade de tráfego das rodovias, foram projetadas obras de melhoria em diversos trechos. A execução das obras depende da remoção de muitas famílias que ocuparam as faixas de domínio e passaram a viver às margens das rodovias.</p>
+        </div>
+        <div class="col-md-6">
+            <span style="font-size: 11px; font-weight: normal;float: right;">Felipe Chimicatti</span>
+            <img src="{% static 'img/imagens-paginas-internas/01.jpg' %}" />
+			<div class="content-media__description-centered ">
+                    <p class="content-media__description">
+                        <i class="content-media__description__icon theme-color-primary">
+                            <!-- Icone foto legenda -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13.5px" height="11.25px" viewBox="0 0 13 12">
+                                <ellipse id="Oval" cx="6.5" cy="6.7826087" rx="2" ry="2.08695652"></ellipse>
+                                <path d="M4.625,0.260869565 L3.48125,1.56521739 L1.5,1.56521739 C0.8125,1.56521739 0.25,2.15217391 0.25,2.86956522 L0.25,10.6956522 C0.25,11.4130435 0.8125,12 1.5,12 L11.5,12 C12.1875,12 12.75,11.4130435 12.75,10.6956522 L12.75,2.86956522 C12.75,2.15217391 12.1875,1.56521739 11.5,1.56521739 L9.51875,1.56521739 L8.375,0.260869565 L4.625,0.260869565 L4.625,0.260869565 Z M6.5,10.0434783 C4.775,10.0434783 3.375,8.5826087 3.375,6.7826087 C3.375,4.9826087 4.775,3.52173913 6.5,3.52173913 C8.225,3.52173913 9.625,4.9826087 9.625,6.7826087 C9.625,8.5826087 8.225,10.0434783 6.5,10.0434783 L6.5,10.0434783 Z" id="Shape">
+                                </path>
+                            </svg>
+                        </i>
+                        <span class="content-media__description__caption" style="font-size: 12px;">A revitalização das rodovias depende da remoção de muitas moradias construídas na faixa de domínio</span> </p>
+                </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-about">
+    <div class="row">
+		<h3 class="header-title">O Programa</h3><br>
+        <div class="col-md-6">
+	            <span style="font-size: 11px; font-weight: normal;float: right;">Felipe Chimicatti</span>
+	            <img src="{% static 'img/imagens-paginas-internas/02.jpg' %}" />
+				<div class="content-media__description-centered ">
+	                    <p class="content-media__description">
+	                        <i class="content-media__description__icon theme-color-primary">
+	                            <!-- Icone foto legenda -->
+	                            <svg xmlns="http://www.w3.org/2000/svg" width="13.5px" height="11.25px" viewBox="0 0 13 12">
+	                                <ellipse id="Oval" cx="6.5" cy="6.7826087" rx="2" ry="2.08695652"></ellipse>
+	                                <path d="M4.625,0.260869565 L3.48125,1.56521739 L1.5,1.56521739 C0.8125,1.56521739 0.25,2.15217391 0.25,2.86956522 L0.25,10.6956522 C0.25,11.4130435 0.8125,12 1.5,12 L11.5,12 C12.1875,12 12.75,11.4130435 12.75,10.6956522 L12.75,2.86956522 C12.75,2.15217391 12.1875,1.56521739 11.5,1.56521739 L9.51875,1.56521739 L8.375,0.260869565 L4.625,0.260869565 L4.625,0.260869565 Z M6.5,10.0434783 C4.775,10.0434783 3.375,8.5826087 3.375,6.7826087 C3.375,4.9826087 4.775,3.52173913 6.5,3.52173913 C8.225,3.52173913 9.625,4.9826087 9.625,6.7826087 C9.625,8.5826087 8.225,10.0434783 6.5,10.0434783 L6.5,10.0434783 Z" id="Shape">
+	                                </path>
+	                            </svg>
+	                        </i>
+	                        <span class="content-media__description__caption" style="font-size: 12px;">Algumas moradias chegam a ocupar a própria pista de acostamento da rodovia</span> </p>
+	                </div>
+        </div>
+        <div class="col-md-6">
+            <p class="justfy-text"> O <b>Concilia BR-381 e Anel </b>  - Programa Judicial de Conciliação para Remoção e Reassentamento Humanizados de Famílias do Anel Rodoviário e BR-381 - é uma iniciativa da Justiça Federal e do Departamento Nacional de Infraestrutura de Transportes (DNIT). Ele teve início em 2013, fruto de uma Ação Civil Pública (ACP nº 57367-09.2013.4.01.3800) ajuizada pelo Ministério Público Federal (MPF) e Defensoria Pública da União (DPU), que se uniram em favor das diversas comunidades afetadas pelas obras na BR-381 e no Anel Rodoviário. </p>
+            <p class="justfy-text">O Programa consiste em remover e reassentar os moradores que residem na faixa de domínio das rodovias. O Concilia realiza acompanhamento multidisciplinar das famílias em todo processo de desapropriação e reassentamento (Pré Morar e Pós Morar).  As atividades tiveram início em 2014 e contam com parcerias de instituições públicas e apoio da sociedade civil organizada. </p>
+        </div>
+    </div>
+</section>
+
+<section class="section-about">
+    <div class="row">
+		<h3 class="header-title">O Reassentamento</h3><br>
+        <div class="col-md-6">
+            <p class="justfy-text">O reassentamento dos moradores atende a critérios indicados pela Justiça Federal e garantem os direitos e a inserção social das famílias cadastradas no Programa.</p>
+            <p class="justfy-text">Os moradores cadastrados contam com atividades sociais e educativas voltadas para a geração de emprego e renda e preparação para sua insersão no novo contexto social. O Programa trabalha com três modalidades de reassentamento: indenização, compra assistida e nova unidade habitacional.</p>
+            <p class="justfy-text">Na etapa do reassentamento iniciada em 2017, o <b>Concilia BR-381 e Anel</b> oferece duas modalidades de aquisição: compra assistida e indenização. Na modalidade compra assistida, é feita uma análise de habitabilidade de acordo com o perfil de cada núcleo familiar.</p>
+            <p class="justfy-text">O DNIT é o responsável pela indenização e aquisição de imóveis disponíveis em Belo Horizonte, região metropolitana e outros municípios.</p>
+
+        </div>
+        <div class="col-md-6">
+			<p class="justfy-text">A etapa de 2017 se caracteriza pelo reassentamento prioritário de 264 famílias. Para 2018, está previsto o reassentamento de outras 1.090 famílias. As ações são pautadas em um <a class="link-text-patner" href="{% url 'plano_providencias' %}">Plano de Providências</a>, documento que orienta e ajuda a viabilizar o reassentamento definitivo das famílias.</p>
+             <span style="font-size: 11px; font-weight: normal;float: right;">Alexandre Dutra</span>
+             <img src="{% static 'img/imagens-paginas-internas/03.jpg' %}" />
+			 <div class="content-media__description-centered ">
+					 <p class="content-media__description">
+						 <i class="content-media__description__icon theme-color-primary">
+							 <!-- Icone foto legenda -->
+							 <svg xmlns="http://www.w3.org/2000/svg" width="13.5px" height="11.25px" viewBox="0 0 13 12">
+								 <ellipse id="Oval" cx="6.5" cy="6.7826087" rx="2" ry="2.08695652"></ellipse>
+								 <path d="M4.625,0.260869565 L3.48125,1.56521739 L1.5,1.56521739 C0.8125,1.56521739 0.25,2.15217391 0.25,2.86956522 L0.25,10.6956522 C0.25,11.4130435 0.8125,12 1.5,12 L11.5,12 C12.1875,12 12.75,11.4130435 12.75,10.6956522 L12.75,2.86956522 C12.75,2.15217391 12.1875,1.56521739 11.5,1.56521739 L9.51875,1.56521739 L8.375,0.260869565 L4.625,0.260869565 L4.625,0.260869565 Z M6.5,10.0434783 C4.775,10.0434783 3.375,8.5826087 3.375,6.7826087 C3.375,4.9826087 4.775,3.52173913 6.5,3.52173913 C8.225,3.52173913 9.625,4.9826087 9.625,6.7826087 C9.625,8.5826087 8.225,10.0434783 6.5,10.0434783 L6.5,10.0434783 Z" id="Shape">
+								 </path>
+							 </svg>
+						 </i>
+						 <span class="content-media__description__caption" style="font-size: 12px;">Primeiras demolições na Vila da Paz, em novembro de 2014</span> </p>
+				 </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-about">
+    <div class="row">
+		<h3 class="header-title">Conciliação</h3><br>
+         <div class="col-md-6">
+            	<span style="font-size: 11px; font-weight: normal;float: right;">Paula Lanza</span>
+            	<img src="{% static 'img/imagens-paginas-internas/04.jpg' %}" />
+				<div class="content-media__description-centered ">
+   					 <p class="content-media__description">
+   						 <i class="content-media__description__icon theme-color-primary">
+   							 <!-- Icone foto legenda -->
+   							 <svg xmlns="http://www.w3.org/2000/svg" width="13.5px" height="11.25px" viewBox="0 0 13 12">
+   								 <ellipse id="Oval" cx="6.5" cy="6.7826087" rx="2" ry="2.08695652"></ellipse>
+   								 <path d="M4.625,0.260869565 L3.48125,1.56521739 L1.5,1.56521739 C0.8125,1.56521739 0.25,2.15217391 0.25,2.86956522 L0.25,10.6956522 C0.25,11.4130435 0.8125,12 1.5,12 L11.5,12 C12.1875,12 12.75,11.4130435 12.75,10.6956522 L12.75,2.86956522 C12.75,2.15217391 12.1875,1.56521739 11.5,1.56521739 L9.51875,1.56521739 L8.375,0.260869565 L4.625,0.260869565 L4.625,0.260869565 Z M6.5,10.0434783 C4.775,10.0434783 3.375,8.5826087 3.375,6.7826087 C3.375,4.9826087 4.775,3.52173913 6.5,3.52173913 C8.225,3.52173913 9.625,4.9826087 9.625,6.7826087 C9.625,8.5826087 8.225,10.0434783 6.5,10.0434783 L6.5,10.0434783 Z" id="Shape">
+   								 </path>
+   							 </svg>
+   						 </i>
+   						 <span class="content-media__description__caption" style="font-size: 12px;">Uma das conciliações realizadas no Núcleo de Conciliação (NUCON), da Justiça Federal, em agosto de 2015</span> </p>
+   				 </div>
+         </div>
+        <div class="col-md-6">
+			<p class="justfy-text">A principal função da Conciliação é a realização de um acordo que evite conflitos entre as partes. As partes envolvidas comunicam ao órgão competente, ou são chamadas por este Órgão, para que seja firmado um acordo, ou seja, para buscar a conciliação. A Justiça Federal marca uma audiência e, diante do conciliador, as partes entram em acordo e anunciam a solução encontrada.</p>
+            <p class="justfy-text">Os acordos firmados têm uma validade jurídica, uma vez que seus termos são levados à homologação judicial. A Conciliação é feita com cada família a ser removida e reassentada e os conciliadores podem fazer sugestões ou até mesmo propor soluções para o conflito.</p>
+            <p class="justfy-text">Um <a class="link-text-patner" href="{% url 'conselho_executivo' %}">Conselho Executivo</a> composto por representantes das instituições parceiras do <b>Concilia BR-381 e Anel</b>, para deliberar e decidir sobre casos especificos e questões estratégicas. O resultado de suas deliberações é submetido ao juízo para homologação.</p>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Imóveis | {{ block.super }} {% endblock %}
+
+{% block content %}
+<section>
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="h1-header-title space-header">Destinação dos imóveis</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="justfy-text">O programa Concilia BR-381 e Anel  busca sempre o imóvel que mais se adeque à cada unidade familiar. Para nortear a melhor destinação, o programa busca atender os seguintes critérios:</p>
+        </div>
+        <div class="col-sm-12">
+            <ol type="A">
+                <li class="list-alpha-numeric">
+                    <p><b>número de dormitórios: </b>será considerado o número de pessoas por gênero e situação de cada indivíduo no grupo familiar.</p>
+                </li>
+                <li class="list-alpha-numeric">
+                    <p><b>tipologia: </b> prioridade à tipologia casa, em detrimento de apartamentos ou habitações coletivas, para as seguintes situações:</p>
+                    <ul style="list-style-type: disc; margin-left: 4.5rem;">
+                        <li><p class="justfy-text">famílias com pessoas com deficiência ou sofrimento mental, com indicativo de agravamento do quadro em função da possibilidade de residência verticalizada, ou mesmo provocar transtornos à vida coletiva/em condomínio;</p></li>
+                        <li><p class="justfy-text">famílias com idosos ou pessoas com deficiência ou mobilidade reduzida (não sendo possível, serão indicados às unidades verticalizadas, primeiro andar);</p></li>
+                        <li><p class="justfy-text">famílias com atividade de renda domiciliar, que não seja geradora de transtornos para o entorno e que seja incompatível com unidade verticalizada.</p></li>
+                    </ul>
+                </li>
+                <li class="list-alpha-numeric">
+                    <p><b>localização: </b> prioridade de escolha por determinada região para as famílias que atenderem ao maior número dos critérios abaixo:</p>
+                     <ul style="list-style-type: disc; margin-left: 4.5rem;">
+                        <li><p class="justfy-text">existência de membro da família em acompanhamento médico ou de instituição de assistência social ou educacional com especificidades que não sejam possíveis de garantir em outras regiões;</p></li>
+                        <li><p class="justfy-text">existência de idosos ou membros que possuam inserção na rede social de determinada região;</p></li>
+                        <li><p class="justfy-text">existência de familiares que prestem apoio ou assistência à família em determinada região;</p></li>
+                        <li><p class="justfy-text">vínculo profissional com determinada região;</p></li>
+                        <li><p class="justfy-text">existência de serviços na região de destino que sejam essenciais à inclusão social da família.</p></li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+{% endblock %}

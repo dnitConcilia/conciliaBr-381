@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% load static %}
+
+{% block title %}
+    Contato | {{ block.super }}
+{% endblock  %}
+
+{% block content %}
+<section>
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h1 class="h1-header-title space-header">Contato</h1>
+        </div>
+    </div>
+	<div class="col-md-6 center-text">
+		<h3 style="margin: 0;font-weight: bold;">ENVIE MENSAGEM, LIGUE OU VENHA NOS VISITAR</h3>
+		<!-- <img class="img-contact-right" src="{% static 'img/background-images/escritorio.jpg' %}"/> -->
+		<span style="font-size: 11px; font-weight: normal;float: right;">Alexandre Dutra</span>
+		<img class="img-contact-right" src="{% static 'img/imagens-paginas-internas/contact1.jpg' %}"/>
+	</div>
+          <div class="col-md-6">
+            {% if success %}
+                <div class="alert alert-success">
+                  Mensagem enviada com sucesso.
+                </div>
+            {% endif %}
+
+            <form class="form-horizontal" action="" method="post">
+              {% csrf_token %}
+                  {% for field in form %}
+                    <div class="form-group {% if field.erros %} has-error {% endif %}">
+
+                      <div class="col-md-9">
+                         <label for="{{ field.auto_id }}" style="font-size: 20px;" >{{ field.label }}</label>
+                        {% render_field field class='form-control' placeholder=field.label %}
+
+                        {% for error in field.errors  %}
+                              <span class="help-block">{{ error }}</span>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  {% endfor %}
+                <div class="form-group">
+                    <div class="col-md-9">
+                      <button type="submit" class="btn btn-contact">Enviar</button>
+                    </div>
+                  </div>
+            </form>
+          </div>
+</section>
+<section class="section-contact-map">
+        <div class="col-md-7">
+            <iframe width="98%" height="500" frameborder="0"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d285.73073097280263!2d-43.9330298069756!3d-19.91885644790053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa699f0ed4385bb%3A0x31918fab1034d3a7!2sR.+Sapuca%C3%AD%2C+571+-+Floresta%2C+Belo+Horizonte+-+MG%2C+30150-050!5e1!3m2!1spt-BR!2sbr!4v1495723320257">
+            </iframe>
+         </div>
+        <div class="col-md-4">
+            <div class="contact-container-infor">
+                <h3>Escritório do Concilia BR-381 e Anel</h3>
+                <p>
+                    <b>E-mail:</b> xxxxxx@conciliabr381eanel.com.br<br />
+                    <b>Telefone:</b> (31) 3224-7704 <br />
+                    <b>Endereço:</b> Rua Sapucaí, 571, bairro Floresta, Belo Horizonte - MG <br />
+                    <b>CEP: </b>30150-050
+                </p>
+                <h3>Como chegar:</h3>
+                 <p>
+                   <img title="Metrô" class="contact-icons" src="{% static 'img/icones/traim.png' %}" />Descer na Estação Central e sair pela Rua Sapucaí <br />
+                   <img title="Ônibus" class="contact-icons" src="{% static 'img/icones/bus.png' %}" />Linhas que atendem a região: 8205 / 8106 / 9104 / 8103 / 8405 / 9210 / SC03A <br />
+                   <img title="A Pé" class="contact-icons" src="{% static 'img/icones/person-walking.svg' %}" />À 800 m da Praça Sete de Setembro, na Região Central de BH <br />
+                </p>
+                <h3>Pontos de referência: </h3>
+                <p>Viaduto Santa Tereza, TV Alterosa, Salumeria Centrale</p>
+            </div>
+        </div>
+</section>
+{% endblock  %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+    Conselho Executivo | {{ block.super }}
+{% endblock  %}
+
+{% block content %}
+
+<section>
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="h1-header-title space-header">Ação civil pública</h1>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="row">
+       <div class="col-sm-6 justfy-text">
+            <p>
+                Texto para a ação civil pública
+            </p>
+		</div>
+	</div>
+	<div class="row">
+		<a target="_blank" href="{% static 'files/2017-06-06-Regimento_Interno_Conselho_Executivo.pdf' %}" >
+			<b>
+				 <h5><img title="Visualizar" class="contact-icons" src="{% static 'img/icones/pdf_icon.svg' %}" />
+					link
+				</h5>
+			</b>
+		</a>
+	</div>
+</section>
+
+{% endblock  %}

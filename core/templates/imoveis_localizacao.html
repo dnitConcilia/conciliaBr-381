@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Imóveis | {{ block.super }} {% endblock %}
+
+{% block content %}
+<section>
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="h1-header-title space-header">Localização dos imóveis</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="justfy-text">Para a etapa de 2017 do Concilia BR 381 e Anel, ficou estabelecido que os imóveis destinados à compra assistida seriam os localizados na Região Metropolitana de Belo Horizonte ou no Colar Metropolitano da Região de Belo Horizonte, conforme relação dos municípios a seguir:</p>
+        </div>
+        <div class="col-sm-12">
+            <ul style="list-style-type: disc;">
+                <li>
+                    <p><b>Região Metropolitana de Belo Horizonte:</b> Baldim, Belo Horizonte, Betim, Brumadinho, Caeté, Capim Branco, Confins, Contagem, Esmeraldas, Florestal, Ibirité, Igarapé, Itaguara, Itatiaiuçu, Jaboticatubas, Juatuba, Lagoa Santa, Mário Campos, Mateus Leme, Matozinhos, Nova Lima, Nova União, Pedro Leopoldo, Raposos, Ribeirão das Neves, Rio Acima, Rio Manso, Sabará, Santa Luzia, São Joaquim de Bicas, São José da Lapa, Sarzedo, Taquaraçu de Minas e Vespasiano.</p>
+                </li>
+                <li>
+                    <p><b>Colar Metropolitano da Região de Belo Horizonte: </b>Barão de Cocais, Belo Vale, Bom Jesus do Amparo, Bonfim, Fortuna de Minas, Funilândia, Inhaúma, Itabirito, Itaúna, Moeda, Pará de Minas, Prudente de Morais, Santa Bárbara, São Gonçalo do Rio Abaixo, São José da Varginha e Sete Lagoas.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}

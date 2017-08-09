@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+    Plano de Providências | {{ block.super }}
+{% endblock  %}
+
+{% block content %}
+<section>
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="h1-header-title space-header">Plano de providências</h1>
+        </div>
+    </div>
+    <div class="row">
+         <div class="col-sm-12">
+            <p>
+              <span style="font-size: 11px; font-weight: normal;float: right;">Felipe Chimicatti</span>
+              <img src="{% static 'img/imagens-paginas-internas/plano_providencias_3.1.jpg' %}" />
+            </p>
+        </div>
+        <div class="col-sm-6">
+            <p class="justfy-text">O <a target="_blank" class="link-text-patner" href="{% static 'files/Plano_de_Providencias_01-2017_V.1.2.pdf' %}"> Plano de Providências </a> é um documento elaborado pelo Departamento Nacional de Infraestrutura de Transportes - DNIT com o objetivo de apresentar ações e soluções que o órgão entende como necessárias para viabilizar o reassentamento definitivo das famílias cadastradas no <b>Concilia BR-381 e Anel</b>.</p>
+            <p class="justfy-text">Além pretender o cumprimento das decisões judiciais proferidas no âmbito da Ação Civil Pública, o documento é fruto de intenso processo dialógico. Nele, foram incorporadas críticas e contribuições de todas as partes envolvidas no processo, bem como consolidados instrumentos que possibilitarão minimizar as divergências e alcançar a eficácia na execução das ações.</p>
+        </div>
+        <div class="col-sm-6">
+              <p class="justfy-text">Como resultado dessas discussões, a proposta do DNIT passou a envolver 12 macroatividades sucessivas e interdependentes, a serem desenvolvidas no período de 20/02/17 a 07/02/18: </p>
+             <div class="col-sm-6">
+                 <ul style="list-style-type:disc">
+                    <li>Banco de Imóveis;</li>
+                    <li>Informações Cadastrais;</li>
+                    <li>Estruturação do Escritório do Programa;</li>
+                    <li>Celebração de Acordo Judicial;</li>
+                    <li>Definição de Parâmetros e Regras;</li>
+                 </ul>
+             </div>
+             <div class="col-sm-6">
+                  <ul style="list-style-type:disc">
+                    <li>Comunicação Institucional;</li>
+                    <li>Audiências Públicas;</li>
+                    <li>Acompanhamento Pré Morar;</li>
+                    <li>Aquisição dos Imóveis;</li>
+                    <li>Contratação e Execução da Demolição;</li>
+                </ul>
+             </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="row">
+        <div class="col-sm-12" style="margin-bottom: 50px;">
+            <br />
+            <a target="_blank" href="{% static 'files/Plano_de_Providencias_01-2017_V.1.2.pdf' %}">
+                <b>
+                    <h3>
+                        <img title="Visualizar" class="contact-icons" src="{% static 'img/icones/pdf_icon.svg' %}" />
+                        Clique aqui para visualizar o Plano de Providências
+                    </h3>
+                </b>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock  %}

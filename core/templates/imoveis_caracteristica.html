@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Imóveis | {{ block.super }} {% endblock %}
+
+{% block content %}
+<section>
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="h1-header-title space-header">Características dos imóveis</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="justfy-text">Critérios e características necesários para fazer parte do Banco de Imóveis:</p>
+        </div>
+        <div class="col-sm-12">
+            <ul style="list-style-type: disc;">
+                <li>
+                    <p><b>Física: </b>estar em perfeitas condições de habitabilidade (iluminação, ventilação, salubridade, estrutural, geológico, entre outros);</p>
+                </li>
+                <li>
+                    <p><b>Jurídica: </b> possuir situação jurídica regular ou outra que possibilite a transferência de seu registro, conforme análise do Conselho Executivo do Programa;</p>
+                </li>
+                <li>
+                    <p><b>Sociocultural: </b> análise quanto à existência de equipamentos públicos/privados mínimos necessários na região;</p>
+                </li>
+                <li>
+                    <p><b>Financeira: </b> ter valor que contemple os parâmetros estabelecidos pelo estudo técnico elaborado pelo DNIT.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}

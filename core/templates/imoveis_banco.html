@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Imóveis | {{ block.super }} {% endblock %}
+
+{% block content %}
+<section>
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="h1-header-title space-header">Imóveis</h1>
+        </div>
+    </div>
+    <div class="row">
+        <h1>BANCO DE IMÓVEIS</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <p class="justfy-text">A etapa de 2017 do Concilia BR 381 e Anel, voltada ao reassentamento de 264 famílias, deu prioridade àquelas sob regime de aluguel social. Nesta etapa, foi usada, prioritariamente, em especial para as comunidades Vila da Paz, Vila da Luz, Vila Pica-pau e Vila Bom Retiro, a modalidade de compra assistida.</p>
+            <p class="justfy-text">Para contemplar as famílias da maneira mais eficiente e rápida possível, foi criado Banco de Imóveis que considerou aqueles disponíveis no mercado, no âmbito de algumas regiões no entorno da capital mineira, Belo Horizonte.  Os imóveis também obedecem a critérios mínimos básicos definidos para as necessidades das famílias após análise e avaliação dos seus cadastros.</p>
+            <p class="justfy-text">Nesse caso da etapa de 2017, as famílias tiveram a possibilidade de escolher entre tipos de unidade habitacional como apartamentos e/ou casas.</p>
+        </div>
+        <div class="col-sm-6">
+            <p>
+              <img style="width: 100%;" src="{% static 'img/imagens-paginas-internas/casinha.jpg' %}"/>
+            </p>
+             <p class="justfy-text">Levou-se em consideração, também, que muitas famílias usavam as dependências de suas moradias para estabelecer pequenos negócios, responsáveis pela geração de sua renda.</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

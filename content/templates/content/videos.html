@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %} Vídeos | {{ block.super }} {% endblock %}
+
+{% load thumbnail %}
+
+{% load static %}
+
+{% block content %}
+<section>
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="h1-header-title space-header">Vídeos</h1>
+        </div>
+    </div>
+    <div class="row">
+        {% for channel in channels %}
+            <div class="col-sm-6">
+                <h4>
+                    <a href="{{ channel.get_absolute_url }}">
+                        <div class="col-sm-12">
+                           {% if channel.exists_image_in_path %}
+                        	   <img class="img-responsive img-thumbnail img-channnel" src="{{channel.image|thumbnail_url:'home_videos' }}">
+							{% else %}
+							   <img class="img-responsive img-thumbnail img-channnel" src="{% static 'img/img_nao_disponivel.png' %}"/>
+							{% endif %}
+                        </div>
+                        <span>{{channel}}</span>
+                    </a>
+                </h4>
+            </div>
+        {% endfor %}
+
+        {% if channels.count == 0 %}
+            <div class="center-text col-sm-12">
+                <h1>Nenhuma galeria de videos encontrada :(</h1>
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

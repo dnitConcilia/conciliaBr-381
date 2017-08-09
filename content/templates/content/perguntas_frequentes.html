@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Dúvidas | {{ block.super }}
+{% endblock  %}
+
+{% block content %}
+<section class="center-text">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="h1-header-title space-header">Dúvidas ?</h1>
+			<h3>Veja as mais frequentes</h3>
+        </div>
+    </div>
+</section>
+
+{% if categorias_perguntas_frequentes.count != 0 %}
+<section class="section-about">
+    {% for categoria in categorias_perguntas_frequentes %}
+
+        <div class="row">
+            <div class="col-md-12">
+                <h4 style="font-weight: bold;">{{categoria}}</h4>
+
+                {% for pergunta in categoria.perguntas_frequentes.all %}
+                    <button class="accordion titulo-sanfona">{{pergunta}}</button>
+                    <div class="panel">
+                      <p class="panel-question justfy-text">{{pergunta.answer}}</p>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+    {% endfor %}
+</section>
+{% else %}
+<section class="section-about center-text">
+
+    <h1>Não encontramos nenhuma pergunta :(</h1>
+
+</section>
+{% endif %}
+
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+      acc[i].onclick = function() {
+        this.classList.toggle("active");
+
+        var panel = this.nextElementSibling;
+
+        if (panel.style.maxHeight){
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + 30 + "px";
+        }
+      }
+    }
+</script>
+{% endblock  %}

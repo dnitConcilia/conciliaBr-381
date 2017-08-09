@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Acervo | {{ block.super }}
+{% endblock  %}
+
+{% block content %}
+<section>
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="h1-header-title space-header">Acervo</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <h4>
+                <a href="{% url 'content:galeria' %}">
+                    <img src="http://www.favelaeissoai.com.br/wp-content/themes/favela2014/img/favela_radio.jpg">
+                    <h2>Fotos</h2>
+                </a>
+            </h4>
+        </div>
+        <div class="col-sm-6">
+            <h4>
+                <a href="{% url 'content:videos' %}">
+                    <img src="http://www.favelaeissoai.com.br/wp-content/themes/favela2014/img/gravacoes_dos_artistas.jpg">
+                    <h2>Vídeos</h2>
+                </a>
+            </h4>
+        </div>
+    </div>
+</section>
+{% endblock  %}

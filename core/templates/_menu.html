@@ -1,0 +1,154 @@
+ {% load static %}
+<header>
+<div class="row">
+	<div class="row"></div>
+     <div class="top-menu-container" id="external-menu">
+        <nav class="main-ul-nav" style="font-weight: bold;">
+            <div class="menu-header-menu-container">
+                <ul id="menu-header-menu" class="menu">
+					<li id="menu-item-54" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54">
+                        <a href="{% url 'index' %}">Início</a>
+                    </li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-19">
+                        <a href="#">O Programa</a>
+                        <div class="nav-sub-wrap ord-nav">
+                            <div class="nsw">
+                                <div class="nav-sub-menus">
+                                    <ul>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24">
+                                            <a href="{% url 'about' %}">O que é</a>
+                                        </li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26">
+                                            <a href="{% url 'partners' %}">Parceiros</a>
+                                        </li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25">
+                                            <a href="{% url 'conselho_executivo' %}">Conselho Executivo</a>
+                                        </li>
+                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25">
+                                            <a target="_blank" href="http://portal.trf1.jus.br/sjmg/processual/anel-rodoviario/anel-rodoviario.htm">Ação Civil Pública</a>
+                                         </li>
+
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2780">
+                                            <a href="{% url 'manual_marca' %}">Manual de identidade visual</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-19">
+                        <a href="">Comunidades</a>
+                        <div class="nav-sub-wrap ord-nav">
+                            <div class="nsw">
+                                <div class="nav-sub-menus">
+                                    <ul>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24">
+                                            <a href="{% url 'content:comunidades' %}">Comunidades Seladas</a>
+                                        </li>
+										{% for comunidade in comunidades %}
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2780">
+                                            <a href="{{comunidade.get_absolute_url}}">{{comunidade}}</a>
+                                        </li>
+                                        {% endfor %}
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24">
+                                            <a href="{% url 'cmar' %}" title="CMAR - COMUNIDADE DE MORADORES EM ÁREAS DE RISCOS">CMAR</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+					<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-19">
+                        <a href="#">Imóveis</a>
+                        <div class="nav-sub-wrap ord-nav">
+                            <div class="nsw">
+                                <div class="nav-sub-menus">
+                                    <ul>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24">
+                                            <a href="{% url 'imoveis_banco' %}">Banco de imóveis</a>
+                                        </li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24">
+                                            <a href="{% url 'imoveis_localizacao' %}">Localização dos imóveis</a>
+                                        </li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25">
+                                            <a href="{% url 'imoveis_caracteristica' %}">Características dos imóveis</a>
+                                        </li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24">
+                                            <a href="{% url 'imoveis_destinacao' %}">Destinação dos imóveis</a>
+                                        </li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24">
+                                            <a href="{% url 'imoveis_acesso' %}">Acesso aos imóveis</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54">
+                        <a href="">PROVIDÊNCIAS</a>
+                        <div class="nav-sub-wrap ord-nav">
+                            <div class="nsw">
+                                <div class="nav-sub-menus">
+                                    <ul>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24">
+                                            <a href="{% url 'plano_providencias' %}">PLANO DE PROVIDÊNCIAS</a>
+                                        </li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25">
+                                            <a href="{% url 'criterios_regras' %}">CRITÉRIOS E REGRAS</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="menu-item-56" class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                        <a href="{% url 'content:noticias' %}">Notícias</a>
+                    </li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="{% url 'acervo' %}">ACERVO</a>
+                        <div class="nav-sub-wrap ord-nav">
+                            <div class="nsw">
+                                <div class="nav-sub-menus">
+                                    <ul>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24">
+                                            <a href="{% url 'content:galeria' %}">FOTOS</a>
+                                        </li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26">
+                                            <a href="{% url 'content:videos' %}">VIDEOS</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54">
+                        <a href="{% url 'content:perguntas-frequentes' %}">Dúvidas</a>
+                    </li>
+                    <li id="menu-item-54" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54">
+                        <a href="{% url 'contact' %}">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+    <section id="big-map" class="image_header hide-for-small" >
+		<div class="row">
+			<div class="image-block">
+				<h1>
+					<a class="logo_marca"
+					style="background: url({% static 'img/concilia.png' %}) no-repeat center 0px #fff; margin-top: 0px;"
+					href="{% url 'index' %}">
+					Concilia BR 381</a>
+				</h1>
+			</div>
+		</div>
+        <!--<div class="image-header-left"></div>-->
+        <!--<div class="image-block">-->
+                <!--<div class="logo_marca"></div>-->
+        <!--</div>-->
+
+    </section>
+</header>
+<div class="top-border medium-down"></div>

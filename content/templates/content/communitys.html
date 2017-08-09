@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Comunidades | {{ block.super }} {% endblock %}
+
+{% block content %}
+
+<!-- scripts -->
+<link rel="stylesheet" href="{% static 'css/storymap-beautify.css' %}">
+<script type="text/javascript" src="{% static 'js/storymap-min.js' %}"></script>
+<!-- end scripts -->
+<style>
+    .vco-menubar {
+        display: none;
+    }
+</style>
+
+<section class="section-about">
+    <div class="row">
+        <div class="col-sm-12">
+             <h1 class="title-header-section">Comunidades Seladas: etapa 2017</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+             <!-- STORY MAP -->
+                <div id="mapdiv" style="width: 100%; height: 600px;"></div>
+            <!-- END STORY MAP -->
+        </div>
+    </div>
+
+</section>
+
+<section>
+    <div class="row">
+         <!--<h1>Pré e Pós Morar</h1>-->
+        <h1 class="subtitle-text-with-image">Inserção social</h1>
+        <div class="col-sm-6">
+            <span style="font-size: 11px; font-weight: normal;float: right;">Ana Marilce</span>
+            <img src="{% static 'img/comunidades_fotos/2.1.jpg' %}" />
+         </div>
+         <div class="col-sm-6">
+                <p class="justfy-text">Um dos diferenciais desse programa de reassentamento é o acompanhamento das famílias em todo o processo de mudança. São levadas em consideração as especificidades de cada núcleo familiar como a presença de idosos, adultos, crianças, adolescentes ou pessoas portadoras de algum tipo de deficiência.</p>
+                <p class="justfy-text">Também é feito um trabalho social nas comunidades e os moradores são inseridos em atividades sociais e educativas de saúde, assistência social, geração de emprego e renda, cultura e educação.</p>
+         </div>
+
+    </div>
+    <div class="row">
+        <h1 class="subtitle-text-with-image">Cadastramento e selagem </h1>
+         <div class="col-sm-6">
+              <p class="justfy-text">As famílias das comunidades beneficiadas pelo Concilia BR-381 e Anel passam pelo processo de cadastramento e selagem das moradias. Durante essa ação, as moradias recebem um selo (que dá origem ao nome do processo) com um número de identificação do imóvel. Estas e outras informações fornecerão subsídios para a Justiça Federal nas audiências de conciliação. Todas as moradias que participam do cadastramento recebem um documento de identificação e um selo afixado na porta da residência com uma sequência numérica. </p>
+              <p class="justfy-text">Durante a atividade, é feito um levantamento arquitetônico, medição dos imóveis, avaliação das benfeitorias das moradias, análise de vulnerabilidade dos moradores, cadastro social das famílias, croqui técnico e registro fotográfico. Em termos genéricos, pode-se compreender esse processo como um registro das realidades física e social identificadas em campo.  </p>
+              <p class="justfy-text">Após o trabalho de medição técnica e avaliação social, é feita a aplicação do diagnóstico social - cadastro mais extenso com informações referentes às necessidades da Vila. Com a finalização da selagem é feito o congelamento das moradias situadas às margens da rodovia. </p>
+
+
+         </div>
+         <div class="col-sm-6">
+             <p>
+                 <span style="font-size: 11px; font-weight: normal;float: right;">Felipe Chimicatti</span>
+                <img src="{% static 'img/comunidades_fotos/2.2.jpg' %}" />
+             </p>
+              <p class="justfy-text">Os moradores são orientados a não expandir suas edificações nem realizar nenhuma modificação estética ou estrutural.</p>
+             <p class="justfy-text"> As benfeitorias feitas após a data da selagem não serão levadas em consideração na avaliação do imóvel durante as Audiências de Conciliação. Os problemas identificados durante a selagem são registrados pelos técnicos e, aqueles que necessitam de atendimentos sistematizados, são direcionados às equipes responsáveis. </p>
+         </div>
+    </div>
+</section>
+
+<script>
+        // storymap_data can be an URL or a Javascript object
+        var storymap_data = "{% static 'js/storymap.json' %}";
+
+        // certain settings must be passed within a separate options object
+        var storymap_options = {
+            map_type: "osm",
+            zoom: 15,
+        };
+
+        var storymap = new VCO.StoryMap('mapdiv', storymap_data, storymap_options);
+        window.onresize = function(event) {
+            storymap.updateDisplay(); // this isn't automatic
+        }
+</script>
+{% endblock %}
